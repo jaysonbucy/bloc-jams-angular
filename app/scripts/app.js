@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 (function(){
   function config($stateProvider, $locationProvider){
     $locationProvider
@@ -23,4 +21,3 @@
     .module('blocJams',['ui.router'])
     .config(config);
 })();
->>>>>>> Stashed changes
