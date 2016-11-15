@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  body.collection {
      background-image: url(../assets/images/blurred_backgrounds/blur_bg_2.jpg);
      background-repeat: no-repeat;
@@ -10,22 +11,37 @@
      position: relative;
  }
  
+=======
+ .album-covers {
+     position: relative;
+ }
+
+>>>>>>> checkpoint-2-configuration
  .collection-album-container {
      position: relative;
      margin-top: 30px;
      margin-bottom: 20px;
      text-align: center;
  }
+<<<<<<< HEAD
  
  .collection-album-container .caption {
      margin-top: 10px;
  }
  
+=======
+
+ .collection-album-container .caption {
+     margin-top: 10px;
+ }
+
+>>>>>>> checkpoint-2-configuration
  .collection-album-container .caption p {
      font-size: 1rem;
      font-weight: 300;
      color: rgba(255, 255, 255, 0.6);
  }
+<<<<<<< HEAD
  
  .collection-album-container .caption p a {
      color: rgba(255, 255, 255, 0.6);
@@ -35,6 +51,17 @@
      color: white;
  }
  
+=======
+
+ .collection-album-container .caption p a {
+     color: rgba(255, 255, 255, 0.6);
+ }
+
+ .collection-album-container .caption p a.album-name {
+     color: white;
+ }
+
+>>>>>>> checkpoint-2-configuration
  .collection-album-container img {
      width: 80%;
  }
