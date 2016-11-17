@@ -2,7 +2,6 @@
   function Fixtures() {
     var Fixtures = {};
 
-    // Example Album
     var albumPicasso = {
         title: 'The Colors',
         artist: 'Pablo Picasso',
@@ -18,7 +17,6 @@
         ]
     };
 
-    // Example Album
     var albumMarconi = {
         title: 'The Telephone',
         artist: 'Guglielmo Marconi',
@@ -34,7 +32,6 @@
         ]
     };
 
-   // Example Album
    var albumBucy = {
        title: 'Order of the Awkward',
        artist: 'Backlash',
@@ -51,8 +48,16 @@
        ]
    };
 
-   Fixtures.getAlbum = function() {
+   Fixtures.getAlbum = function(){
         return albumPicasso;
+    };
+
+    Fixtures.getCollection = function(numberOfAlbums){
+      var albumCollection = [];
+      for (var i = 0; i < numberOfAlbums; i++){
+        albumCollection.push(Fixtures.getAlbum())
+      }
+      return albumCollection;
     };
 
     return Fixtures;
