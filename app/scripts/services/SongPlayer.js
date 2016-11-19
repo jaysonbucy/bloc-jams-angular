@@ -18,6 +18,7 @@
     * commented code is poorly written code
     */
     var setSong = function(song) {
+      console.log(song);
       if (currentBuzzObject) {
         currentBuzzObject.stop();
         currentSong.playing = null;
@@ -30,6 +31,7 @@
     };
 
     SongPlayer.play = function(song){
+      console.log("In the play functionality");
       if (currentSong !== song){
         setSong(song);
         currentBuzzObject.play();
@@ -42,7 +44,7 @@
 
     };
 
-    SongPlayer.pause = function(){
+    SongPlayer.pause = function(song){
       currentBuzzObject.pause();
       song.playing = false;
     };
