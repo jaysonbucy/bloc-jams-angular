@@ -10,7 +10,7 @@
         .state('landing', {
           url: '/',
 		      controller: 'LandingCtrl as landing',
-          templateUrl: 'templates/landing.html'
+          templateUrl: '/templates/landing.html'
         })
 		    .state('collection', {
 			    url: '/collection',
@@ -20,7 +20,7 @@
         .state('album', {
           url: '/album',
 		      controller: 'AlbumCtrl as album',
-          templateUrl: 'templates/album.html'
+          templateUrl: '/templates/album.html'
         });
   }
 
