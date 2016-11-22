@@ -42,7 +42,6 @@
     };
 
     SongPlayer.play = function(song){
-      console.log("In the play functionality");
       if (currentSong !== song){
         setSong(song);
         playSong(song);
