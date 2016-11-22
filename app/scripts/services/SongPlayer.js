@@ -1,6 +1,24 @@
 (function(){
-  function SongPlayer(){
+  function SongPlayer(Fixtures){
     var SongPlayer = {};
+
+    /**
+    * @desc Album object
+    * @type {Object}
+    **/
+    var currentAlbum = Fixtures.getAlbum();
+
+    /**
+    * @function getSongIndex
+    * @desc Active song object from list of songs
+    * @type {Object} song
+    **/
+    var getSongIndex = function(song){
+      //return currentAlbum.songs.indexOf(song);
+      var songList = ['Blue', 'Green', 'Red', 'Pink', 'Magenta'];
+        return songList.indexOf(song.title);
+    }
+
     SongPlayer.currentSong = null;
 
     /**
@@ -36,9 +54,19 @@
     * I hate commenting code
     **/
     var playSong = function(song){
-      currentBuzzObject.play(song);
+      currentBuzzObject.play();
       song.playing = true;
     };
+
+    /**
+    * @function stopSong
+    * @desc Stops current song playing
+    * @param {Object} song
+    **/
+    var stopSong = function(song){
+      currentBuzzObject.stop();
+      song.playing = false;
+    }
 
     SongPlayer.play = function(song){
       song = song || SongPlayer.currentSong;
@@ -54,12 +82,38 @@
     };
 
     SongPlayer.pause = function(song){
-      song = song || SongPlayer.currentSong;
-      currentBuzzObject.pause();
-      song.playing = false;
-    };
-    return SongPlayer;
-  }
+        song = song || SongPlayer.currentSong;
+        currentBuzzObject.pause();
+        song.playing = false;
+      };
+
+      SongPlayer.previous = function(song){
+        var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+        currentSongIndex--;
+        if (currentSongIndex < 0){
+          stopSong(song);
+        } else {
+          var song = currentAlbum.songs[currentSongIndex];
+          setSong(song);
+          playSong(song);
+        }
+      };
+
+      SongPlayer.next = function(){
+        var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+        currentSongIndex++;
+        var lastSongIndex = currentAlbum.songs.length -1;
+        if (currentSongIndex > lastSongIndex){
+          stopSong(SongPlayer.currentSong);
+        } else {
+          var song = currentAlbum.songs[currentSongIndex];
+          setSong(song);
+          playSong(song);
+        }
+      };
+
+      return SongPlayer;
+    }
 
   angular
     .module('blocJams')
