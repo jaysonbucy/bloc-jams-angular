@@ -17,7 +17,7 @@
     * @param {Object} song
     * commented code is poorly written code
     */
-    var setSong = function(song) {
+    var setSong = function(song){
       console.log(song);
       if (currentBuzzObject) {
         currentBuzzObject.stop();
@@ -30,12 +30,22 @@
       currentSong = song;
     };
 
+    /**
+    * @function playSong
+    * @desc Loads and plays the current song as currentBuzzObject
+    * @param {Object} song
+    * I hate commenting code
+    **/
+    var playSong = function(song){
+      currentBuzzObject.play();
+      song.playing = true;
+    };
+
     SongPlayer.play = function(song){
       console.log("In the play functionality");
       if (currentSong !== song){
         setSong(song);
-        currentBuzzObject.play();
-        song.playing = true;
+        playSong(song);
       } else if (currentSong === song){
         if (currentBuzzObject.isPaused()){
           currentBuzzObject.play();
