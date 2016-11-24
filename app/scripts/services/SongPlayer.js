@@ -14,12 +14,11 @@
     * @type {Object} song
     **/
     var getSongIndex = function(song){
-      //return currentAlbum.songs.indexOf(song);
-      var songList = ['Blue', 'Green', 'Red', 'Pink', 'Magenta'];
-        return songList.indexOf(song.title);
+      return currentAlbum.songs.indexOf(song);
     }
 
     SongPlayer.currentSong = null;
+    SongPlayer.currentTime = null;
 
     /**
     * @desc Buzz object audio file
@@ -113,7 +112,7 @@
       };
 
       return SongPlayer;
-    }
+    };
 
   angular
     .module('blocJams')
