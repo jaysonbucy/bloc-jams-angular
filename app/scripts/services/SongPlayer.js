@@ -14,7 +14,12 @@
     * @type {Object} song
     **/
     var getSongIndex = function(song){
-      return currentAlbum.songs.indexOf(song);
+      //return currentAlbum.songs.indexOf(song);
+      var songList = [];
+      for (var i = 0; i < currentAlbum.songs.length; i++){
+        songList.push(currentAlbum.songs[i].title);
+      }
+      return songList.indexOf(song.title);
     }
 
     SongPlayer.currentSong = null;
