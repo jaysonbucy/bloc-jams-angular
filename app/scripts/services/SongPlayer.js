@@ -35,10 +35,7 @@
 
     SongPlayer.currentSong = null;
     SongPlayer.currentTime = null;
-<<<<<<< HEAD
-=======
     SongPlayer.volume = 80;
->>>>>>> assignment-10-directives-part-2
 
     /**
     * @desc Buzz object audio file
