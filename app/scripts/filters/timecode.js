@@ -6,7 +6,6 @@
       if (Number.isNaN(seconds)){
         return '-:--';
       }
-      debugger;
       var wholeSeconds = Math.floor(seconds);
       var minutes = Math.floor(wholeSeconds / 60);
       var remainingSeconds = wholeSeconds % 60;
