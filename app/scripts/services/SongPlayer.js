@@ -35,6 +35,10 @@
 
     SongPlayer.currentSong = null;
     SongPlayer.currentTime = null;
+<<<<<<< HEAD
+=======
+    SongPlayer.volume = 80;
+>>>>>>> assignment-10-directives-part-2
 
     /**
     * @desc Buzz object audio file
@@ -130,6 +134,13 @@
           setSong(song);
           playSong(song);
         }
+      };
+
+      SongPlayer.setVolume = function(volume){
+        if (currentBuzzObject){
+          currentBuzzObject.setVolume(volume);
+        }
+        SongPlayer.volume = volume;
       };
 
       return SongPlayer;
