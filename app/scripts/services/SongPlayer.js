@@ -141,7 +141,7 @@
       };
 
       return SongPlayer;
-    };
+    }
 
   angular
     .module('blocJams')
